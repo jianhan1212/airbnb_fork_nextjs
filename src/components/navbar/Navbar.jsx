@@ -2,26 +2,24 @@
 import styles from './navbar.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
-import Ar from "/public/arrowright.svg" 
-import Al from "/public/arrowleft.svg" 
 import ListItem from '../listItem/ListItem'
 import { useRef } from 'react'
-import {BiSolidRightArrow, BiSolidLeftArrow} from 'react-icons/bi'
+import { BiSolidRightArrow, BiSolidLeftArrow } from 'react-icons/bi'
 
 const Navbar = () => {
-    
+
     const listRef = useRef()
 
     const handleClick = (direction) => {
-        let distance = listRef.current.getBoundingClientRect().x -50
+        let distance = listRef.current.getBoundingClientRect().x - 40
         console.log(distance)
         if (direction === "left") {
             console.log("left")
-            listRef.current.style.transform = `translateX(${35 + distance}px)`
+            listRef.current.style.transform = `translateX(${100 + distance}px)`
         }
         if (direction === "right") {
             console.log("right")
-            listRef.current.style.transform = `translateX(${-35 + distance}px)`
+            listRef.current.style.transform = `translateX(${-100 + distance}px)`
         }
     }
 
@@ -42,15 +40,15 @@ const Navbar = () => {
                             <span className={styles.line}></span>
                             <button className={styles.button}>
                                 <div className={styles.label}>新增人數</div>
-                                <div>
-                                    <Image
-                                        src="/search.svg"
-                                        alt='searchicon'
-                                        width={15}
-                                        height={15}
-                                    />
-                                </div>
                             </button>
+                            <div className={styles.search}>
+                                <Image
+                                    src="/search.svg"
+                                    alt='searchicon'
+                                    width={25}
+                                    height={25}
+                                />
+                            </div>
                         </div>
                     </div>
 
@@ -60,26 +58,26 @@ const Navbar = () => {
                     <div className={styles.postContainer}>
                         <Link href="/about">發布旅遊資訊</Link>
                         <button className={styles.globalIcon}>
-                            <Image src="/globe.svg" width={15} height={15}/>
+                            <Image src="/globe.svg" width={25} height={25} />
                         </button>
                     </div>
                     <div className={styles.userContainer}>
                         <div className={styles.menu}>
                             <button className={styles.menuBtn}>
                                 <div className={styles.hamburger}>
-                                    <Image 
-                                    src="/bars.svg" 
-                                    width={15} 
-                                    height={15}
-                                    className={styles.hamIcon}
+                                    <Image
+                                        src="/bars.svg"
+                                        width={15}
+                                        height={15}
+                                        className={styles.hamIcon}
                                     />
                                 </div>
                                 <div className={styles.userImage}>
-                                <Image 
-                                    src="/user.svg" 
-                                    width={20} 
-                                    height={20}
-                                    className={styles.hamIcon}
+                                    <Image
+                                        src="/user.svg"
+                                        width={20}
+                                        height={20}
+                                        className={styles.hamIcon}
                                     />
                                 </div>
                             </button>
@@ -88,22 +86,24 @@ const Navbar = () => {
                 </div>
             </div>
             <div className={styles.bottom}>
-                <div style={{border: "2px solid black", padding: "2px", borderRadius: "50%"}}>
-               <BiSolidLeftArrow onClick={()=>handleClick("left")}/>
+                <div className={styles.arrowLeft} >
+                    <BiSolidLeftArrow onClick={() => handleClick("left")} />
 
                 </div>
-               <div className={styles.itemContainer} ref={listRef}>
-                    <ListItem/>
-                    <ListItem/>
-                    <ListItem/>
-                    <ListItem/>
-                    <ListItem/>
-                    <ListItem/>
-                    <ListItem/>
-                    <ListItem/>
-                    <ListItem/>
-               </div>
-               <BiSolidRightArrow onClick={()=>handleClick("right")}/>
+                <div className={styles.itemContainer} ref={listRef}>
+                    <ListItem />
+                    <ListItem />
+                    <ListItem />
+                    <ListItem />
+                    <ListItem />
+                    <ListItem />
+                    <ListItem />
+                    <ListItem />
+                    <ListItem />
+                </div>
+                <div className={styles.arrowRight} >
+                    <BiSolidRightArrow onClick={() => handleClick("right")} />
+                </div>
             </div>
         </div>
     )

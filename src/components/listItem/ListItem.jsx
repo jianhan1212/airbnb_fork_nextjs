@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './listItem.module.css'
 import City from 'public/city.svg'
 import Image from 'next/image'
+
 const ListItem = () => {
   return (
     <div className={styles.container}>

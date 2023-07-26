@@ -11,7 +11,7 @@ const getData = () => {
       return locationData
     }
     return notFound()
-  }
+}
 
 export default function Home() {
   const res = getData()
