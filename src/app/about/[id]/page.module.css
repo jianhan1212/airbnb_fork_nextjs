@@ -1,0 +1,22 @@
+.container {
+    margin-top: 15%;
+    background-color: aquamarine;
+    padding: 0 18px;
+}
+
+.topTitle {
+    display: flex;
+}
+
+.bottomTitle {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left {
+    display: flex;
+}
+
+.right {
+    display: flex;
+}

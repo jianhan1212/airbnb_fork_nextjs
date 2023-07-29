@@ -1,10 +1,10 @@
 "use client"
 import { notFound } from 'next/navigation'
 import styles from './local.module.css'
-// import Image from 'next/image'
 import Link from 'next/link'
 import { AiFillStar, AiOutlineHeart } from 'react-icons/ai'
-import { FcLike } from 'react-icons/fc'
+// import { Carousel } from '@trendyol-js/react-carousel';
+import SimpleImageSlider from "react-simple-image-slider";
 
 const Local = ({ test }) => {
 
@@ -18,10 +18,19 @@ const Local = ({ test }) => {
   return (
     <div className={styles.container} onClick={() => { info(test.city) }}>
       <AiOutlineHeart className={styles.like} />
-      <Link href="/about">
         <div className={styles.imgContainer}>
-          <img src={test.image} alt={test.title} className={styles.image} />
+          <SimpleImageSlider 
+            images={test.image}
+            loop={false}
+            showNavs={true}
+            width={"100%"}
+            height={300}
+            navStyle={2}
+            navMargin={10}
+            showBullets={true}
+          />
         </div>
+      <Link href="/about" target='_blank'>
         <div className={styles.textContainer}>
           <div className={styles.title}>
             <p className={styles.pTitle}>{test.title}</p>

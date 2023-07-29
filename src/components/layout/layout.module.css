@@ -1,4 +1,3 @@
-
 .container {
     position: fixed;
     display: flex;
@@ -6,7 +5,7 @@
     top: 0;
     width: 100%;
     max-height: 35%;
-    z-index: 24;
+    z-index: 999;
     background-color: white;
 }
 .top {
@@ -16,16 +15,6 @@
     align-items: center;
     /* max-height: 40px; */
     padding: 18px;
-    border-bottom: 1px solid lightgray;
-}
-
-.bottom {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    padding: 4px 20px;
     border-bottom: 1px solid lightgray;
 }
 
@@ -76,29 +65,22 @@
     border: none;
     background-color: transparent;
     cursor: pointer;
-    padding: 0 ;
-    /* text-align: center; */
+    padding: 0;
+    width: 300px;
 }
 
 .label {
-    /* padding: 0 10px; */
     flex: 1 1 auto;
     font-size: 14px;
     color: #222222;
-    /* text-shadow: 0 1px 1px lightgray; */
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
-    min-width: var(80px, 0);
     line-height: 22px;
     padding: 0 16px;
     font-weight: 600;
-}
-
-.line {
-    background-color: lightgray;
-    height: 45px;
-    width: 1px;
+    text-align: left;
+    margin-left: 10px;
 }
 
 .search {
@@ -150,18 +132,6 @@
     background-color: rgba(0,0,0,0.04);
 }
 
-.content {
-    --context-menu-border-radius: 10px;
-   --context-menu-item-padding: 15px 100px 15px 15px;
-   --context-menu-background-color: #ffffff;
-   --context-menu-item-color: black;
-   --context-menu-border-color: #dddddd;
-   --context-menu-border-size: 1px;
-   --context-menu-divider-color: #dddddd;
-   --context-menu-divider-margin: 10px 0;
-   --context-menu-item-background-color-hover: rgba(221, 221, 221, .3);
-}
-
 .menu {
     border: 1px solid #dddddd;
     border-radius: 21px;
@@ -201,33 +171,6 @@
     margin-left: 10px;
 }
 
-.itemContainer {
-    display: flex;
-    justify-content: space-evenly;
-    margin-left: 5px;
-    width: 100%;
-    transform: translateX(0px);
-    transition: all 1s ease;
-}
 
-.arrowLeft {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid black;
-    padding: 15px; 
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 990;
-}
 
-.arrowRight {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid black;
-    padding: 15px; 
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 990;
-}
+

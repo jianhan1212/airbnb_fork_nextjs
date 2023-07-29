@@ -20,37 +20,41 @@
 .imgContainer {
     /* transition: all .3s ease;
     transform: scale(1.1); */
-    height: 300px;
+    /* height: 100%; */
     display: flex;
     justify-content: center;
     width: 100%;
     overflow: hidden;
 }
-
+.slide {
+    z-index: 999;
+}
 
 .like {
     position: absolute;
     right: 3%;
     top: 3%;
-    z-index: 99;
+    z-index: 20;
     font-size: 36px;
-    background: gray;
+    background: rgba(221, 221, 221, .3);
     opacity: 1;
     border: none;
-
+    border-radius: 50%;
 }
 
 
 .image {
+    /* width: 300px;
+    height: 300px; */
     width: 100%;
     height: 100%;
     opacity: .9;
 }
 
-.image:hover {
+/* .image:hover {
     transition: all .4s ease;
     transform: scale(1.07);
-}
+} */
 .textContainer {
    display: flex;
    flex-direction: column;

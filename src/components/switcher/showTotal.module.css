@@ -1,0 +1,33 @@
+.container {
+    margin: 10% 20px 0 20px;
+    border: 1px solid #DDDDDD;
+    border-radius: 12px;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+}
+
+.text {
+    display: flex;
+}
+
+.total {
+    border-right: .5px solid #DDDDDD;
+    padding: 0 16px 0 10px;
+}
+
+.pay {
+    border-left: .5px solid #DDDDDD;
+    padding-left: 16px;
+}
+
+.totalText {
+    font-weight: 700;
+}
+.payText {
+    color: #717171;
+}

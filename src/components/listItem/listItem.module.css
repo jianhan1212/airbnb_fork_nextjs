@@ -7,9 +7,26 @@
     cursor: pointer;
     opacity: .6;
     border: transparent;
+    padding: 5px;
 }
 
 .container:hover {
-    /* box-shadow: 0 1px 2px lightgray; */
+    border-bottom: 1px solid #717171;
     opacity: 1;
 }
+
+.carousel {
+    align-items: center;
+}
+
+.direction {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 5px;
+}
+
+

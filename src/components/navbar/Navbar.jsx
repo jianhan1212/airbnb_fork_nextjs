@@ -2,26 +2,40 @@
 import styles from './navbar.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
-import ListItem from '../listItem/ListItem'
-import { useRef } from 'react'
-import { BiSolidRightArrow, BiSolidLeftArrow } from 'react-icons/bi'
+import "use-context-menu/styles.css";
+import { HiBars3 } from 'react-icons/hi2'
+import { RiGlobalLine } from 'react-icons/ri'
+import { NavbarBottom } from './NavbarBottom'
+import { ContextMenuDivider, ContextMenuItem, useContextMenu } from 'use-context-menu'
+import LoginBtn from './LoginBtn'
 
 const Navbar = () => {
 
-    const listRef = useRef()
-
-    const handleClick = (direction) => {
-        let distance = listRef.current.getBoundingClientRect().x - 40
-        console.log(distance)
-        if (direction === "left") {
-            console.log("left")
-            listRef.current.style.transform = `translateX(${100 + distance}px)`
-        }
-        if (direction === "right") {
-            console.log("right")
-            listRef.current.style.transform = `translateX(${-100 + distance}px)`
-        }
+    const loginBtn = () => {
+        console.log("login")
     }
+    const registerBtn = () => {
+        console.log("registerBtn")
+    }
+    const talk = () => {
+        console.log("talk")
+    }
+
+    const menu = useContextMenu(
+        <div>
+            <ContextMenuItem onSelect={registerBtn}>註冊</ContextMenuItem>
+            <ContextMenuItem onSelect={loginBtn}>登入</ContextMenuItem>
+            <ContextMenuDivider />
+            <ContextMenuItem onSelect={loginBtn}>在Airbnb上發布房源</ContextMenuItem>
+            <ContextMenuItem onSelect={talk}>說明中心</ContextMenuItem>
+        </div>,
+        { 
+            alignTo: "auto-target", 
+            className: styles.content,
+            // style: {right: "100px"}
+        }
+    );
+
 
     return (
         <div className={styles.container}>
@@ -35,75 +49,58 @@ const Navbar = () => {
                             </button>
                             <span className={styles.line}></span>
                             <button className={styles.button}>
-                                <div className={styles.label}>時間</div>
+                                <div className={styles.label}>任 1 週</div>
                             </button>
                             <span className={styles.line}></span>
                             <button className={styles.button}>
-                                <div className={styles.label}>新增人數</div>
+                                <div className={styles.label} style={{ color: "#717171", fontWeight: "inherit" }}>新增人數</div>
+                                <div className={styles.search}>
+                                    <Image
+                                        src="/search.svg"
+                                        alt='searchicon'
+                                        width={12}
+                                        height={12}
+                                    />
+                                </div>
                             </button>
-                            <div className={styles.search}>
-                                <Image
-                                    src="/search.svg"
-                                    alt='searchicon'
-                                    width={25}
-                                    height={25}
-                                />
-                            </div>
                         </div>
                     </div>
-
-
                 </div>
                 <div className={styles.right}>
                     <div className={styles.postContainer}>
-                        <Link href="/about">發布旅遊資訊</Link>
+                        <Link href="/about" target='_blank' className={styles.roomPost}>在Airbnb上發布房源</Link>
                         <button className={styles.globalIcon}>
-                            <Image src="/globe.svg" width={25} height={25} />
+                            <RiGlobalLine style={{ fontSize: "18px" }} />
                         </button>
                     </div>
-                    <div className={styles.userContainer}>
-                        <div className={styles.menu}>
-                            <button className={styles.menuBtn}>
+                    <div className={styles.userContainer}
+                        onClick={menu.onContextMenu}
+                        onKeyDown={menu.onKeyDown}
+                        tabIndex={0}
+                    >   
+                        <LoginBtn />
+                        {menu.contextMenu}
+                        {/* <div className={styles.menu}>
+                            <button className={styles.menuBtn} onClick={loginBtn}>
                                 <div className={styles.hamburger}>
-                                    <Image
-                                        src="/bars.svg"
-                                        width={15}
-                                        height={15}
-                                        className={styles.hamIcon}
-                                    />
+                                    <HiBars3 className={styles.barIcon}/>
                                 </div>
                                 <div className={styles.userImage}>
                                     <Image
                                         src="/user.svg"
-                                        width={20}
-                                        height={20}
+                                        width={30}
+                                        height={30}
                                         className={styles.hamIcon}
                                     />
                                 </div>
                             </button>
-                        </div>
+                        </div> */}
                     </div>
+
                 </div>
             </div>
             <div className={styles.bottom}>
-                <div className={styles.arrowLeft} >
-                    <BiSolidLeftArrow onClick={() => handleClick("left")} />
-
-                </div>
-                <div className={styles.itemContainer} ref={listRef}>
-                    <ListItem />
-                    <ListItem />
-                    <ListItem />
-                    <ListItem />
-                    <ListItem />
-                    <ListItem />
-                    <ListItem />
-                    <ListItem />
-                    <ListItem />
-                </div>
-                <div className={styles.arrowRight} >
-                    <BiSolidRightArrow onClick={() => handleClick("right")} />
-                </div>
+                <NavbarBottom />
             </div>
         </div>
     )
