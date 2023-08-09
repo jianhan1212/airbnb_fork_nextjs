@@ -6,6 +6,7 @@ import { AiFillStar, AiOutlineHeart } from 'react-icons/ai'
 // import { Carousel } from '@trendyol-js/react-carousel';
 import SimpleImageSlider from "react-simple-image-slider";
 
+
 const Local = ({ test }) => {
 
   const info = (city) => {
