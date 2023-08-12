@@ -3,7 +3,6 @@ import styles from './navbar.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
 import "use-context-menu/styles.css";
-import { HiBars3 } from 'react-icons/hi2'
 import { RiGlobalLine } from 'react-icons/ri'
 import { NavbarBottom } from './NavbarBottom'
 import { ContextMenuDivider, ContextMenuItem, useContextMenu } from 'use-context-menu'
