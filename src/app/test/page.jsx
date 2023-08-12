@@ -1,10 +1,11 @@
-import BasicModal from '@/components/Modal/BasicModal'
+"use client"
+import SelectModal from '@/components/Modal/SelectModal'
 import React from 'react'
 
 const test = () => {
   return (
     <div>
-        <BasicModal/>
+        <SelectModal/>
     </div>
   )
 }

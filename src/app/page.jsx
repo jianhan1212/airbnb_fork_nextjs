@@ -27,8 +27,12 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <ShowTotal cheacked={switcherState}
-        onHandleChange={onHandleChange} />
+      <div className='flex justify-center'>
+        <ShowTotal 
+          cheacked={switcherState}
+          onHandleChange={onHandleChange} 
+        />
+      </div>
       
       {switcherState === true ? (
         <div className={styles.container}>

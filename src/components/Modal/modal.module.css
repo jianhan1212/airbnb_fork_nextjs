@@ -1,0 +1,10 @@
+.typeBtn {
+    width: 100px;
+    height: 70px;
+    border-radius: 5px;
+    border: 1px solid #dddddd;
+}
+
+.typeBtn:hover {
+    border-color: black;
+}

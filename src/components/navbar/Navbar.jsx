@@ -15,7 +15,7 @@ const Navbar = () => {
     const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
     const loginBtn = () => {
-        console.log("login")
+        onOpen()
     }
     const registerBtn = () => {
         onOpen()
@@ -24,7 +24,7 @@ const Navbar = () => {
         console.log("talk")
     }
 
-    
+
 
     const menu = useContextMenu(
         <div>
@@ -105,10 +105,11 @@ const Navbar = () => {
                     </div>
                 </div>
                 <div className={styles.bottom}>
-                    <NavbarBottom />
+                    <NavbarBottom/>
                 </div>
             </div>
-            <BasicModal isOpen={isOpen} onOpenChange={onOpenChange}/>
+            <BasicModal isOpen={isOpen} onOpenChange={onOpenChange} />
+            
         </>
     )
 }

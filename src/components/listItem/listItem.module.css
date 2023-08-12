@@ -17,6 +17,7 @@
 
 .carousel {
     align-items: center;
+    padding: 3px 10px 3px 2px;
 }
 
 .direction {
@@ -27,6 +28,7 @@
     border-radius: 50%;
     cursor: pointer;
     padding: 5px;
+    margin: 0 15px 0 0;
 }
 
 
