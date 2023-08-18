@@ -2,7 +2,7 @@
 import { notFound } from 'next/navigation'
 import styles from './local.module.css'
 import Link from 'next/link'
-import { AiFillStar, AiOutlineHeart } from 'react-icons/ai'
+import { AiFillStar} from 'react-icons/ai'
 // import { Carousel } from '@trendyol-js/react-carousel';
 import SimpleImageSlider from "react-simple-image-slider";
 import BasicModal from '../Modal/BasicModal'
