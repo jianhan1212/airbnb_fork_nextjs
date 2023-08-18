@@ -39,21 +39,21 @@ const Local = ({ test }) => {
     <>
       <div className={styles.container} onClick={() => { info(test.city) }}>
         {/* <AiOutlineHeart className={styles.like} onClick={()=>onOpen()} /> */}
-        {isLoggedIn ? (
-          <Checkbox
-            {...label}
-            icon={<TiHeartOutline size={28}/>}
-            checkedIcon={<FcLike size={28}/>}
-            checked={isChecked}
-            onChange={handleCheckboxChange}
-            className={styles.like}
-          />
-        ) : (
-          <div>
-            <Checkbox icon={<TiHeartOutline size={28} />} onClick={handleLogin} className={styles.like} />
-          </div>
-        )}
         <div className={styles.imgContainer}>
+          {isLoggedIn ? (
+            <Checkbox
+              {...label}
+              icon={<TiHeartOutline size={28}/>}
+              checkedIcon={<FcLike size={28}/>}
+              checked={isChecked}
+              onChange={handleCheckboxChange}
+              className={styles.like}
+            />
+          ) : (
+            <div>
+              <Checkbox icon={<TiHeartOutline size={28} />} onClick={handleLogin} className={styles.like} />
+            </div>
+          )}
           <SimpleImageSlider
             images={test.image}
             loop={false}
