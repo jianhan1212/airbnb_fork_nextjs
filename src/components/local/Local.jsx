@@ -40,9 +40,20 @@ const Local = ({ test }) => {
       <div className={styles.container} onClick={() => { info(test.city) }}>
         {/* <AiOutlineHeart className={styles.like} onClick={()=>onOpen()} /> */}
         <div className={styles.imgContainer}>
+          
+          <SimpleImageSlider
+            images={test.image}
+            loop={false}
+            showNavs={true}
+            width={"100%"}
+            height={300}
+            navStyle={2}
+            navMargin={10}
+            showBullets={true}
+          />
           {isLoggedIn ? (
             <Checkbox
-              // {...label}
+              {...label}
               icon={<TiHeartOutline size={28}/>}
               checkedIcon={<FcLike size={28}/>}
               checked={isChecked}
@@ -54,16 +65,6 @@ const Local = ({ test }) => {
               <Checkbox className={styles.like} icon={<TiHeartOutline size={28} />} onClick={handleLogin} />
             </>
           )}
-          <SimpleImageSlider
-            images={test.image}
-            loop={false}
-            showNavs={true}
-            width={"100%"}
-            height={300}
-            navStyle={2}
-            navMargin={10}
-            showBullets={true}
-          />
         </div>
         <Link href="/about" target='_blank'>
           <div className={styles.textContainer}>
