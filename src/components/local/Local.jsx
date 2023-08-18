@@ -2,15 +2,15 @@
 import { notFound } from 'next/navigation'
 import styles from './local.module.css'
 import Link from 'next/link'
-import { AiFillStar} from 'react-icons/ai'
+import { AiFillStar } from 'react-icons/ai'
 // import { Carousel } from '@trendyol-js/react-carousel';
 import SimpleImageSlider from "react-simple-image-slider";
 import BasicModal from '../Modal/BasicModal'
 import { useDisclosure } from '@nextui-org/modal'
 import { useState } from 'react'
 import Checkbox from '@mui/material/Checkbox';
-import {FcLike} from 'react-icons/fc'
-import {TiHeartOutline} from 'react-icons/ti'
+import { FcLike } from 'react-icons/fc'
+import { TiHeartOutline } from 'react-icons/ti'
 
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
@@ -40,7 +40,7 @@ const Local = ({ test }) => {
       <div className={styles.container} onClick={() => { info(test.city) }}>
         {/* <AiOutlineHeart className={styles.like} onClick={()=>onOpen()} /> */}
         <div className={styles.imgContainer}>
-          
+
           <SimpleImageSlider
             images={test.image}
             loop={false}
@@ -54,24 +54,29 @@ const Local = ({ test }) => {
           {isLoggedIn ? (
             <Checkbox
               {...label}
-              icon={<TiHeartOutline size={28}/>}
-              checkedIcon={<FcLike size={28}/>}
+              icon={<TiHeartOutline size={28} />}
+              checkedIcon={<FcLike size={28} />}
               checked={isChecked}
               onChange={handleCheckboxChange}
-              // className={styles.like}
               sx={{
                 position: 'absolute',
                 top: "3%",
-                right: "3%"
+                right: "3%",
+                background: "rgba(221, 221, 221, .1)",
+                opacity: ".7"
               }}
             />
           ) : (
             <>
-              <Checkbox  sx={{
+              <Checkbox sx={{
                 position: 'absolute',
                 top: "3%",
-                right: "3%"
-              }} icon={<TiHeartOutline size={28} />} onClick={handleLogin} />
+                right: "3%",
+                background: "rgba(221, 221, 221, .1)",
+                opacity: ".7"
+              }}
+                icon={<TiHeartOutline size={28} />}
+                onClick={handleLogin} />
             </>
           )}
         </div>
