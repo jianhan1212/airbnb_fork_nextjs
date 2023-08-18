@@ -50,9 +50,9 @@ const Local = ({ test }) => {
               className={styles.like}
             />
           ) : (
-            <div>
+            <>
               <Checkbox icon={<TiHeartOutline size={28} />} onClick={handleLogin} className={styles.like} />
-            </div>
+            </>
           )}
           <SimpleImageSlider
             images={test.image}
