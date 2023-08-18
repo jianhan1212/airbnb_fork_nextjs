@@ -5,7 +5,7 @@ const page = () => {
 
   return (
     <div className={styles.container}>
-      <Test/>
+      
     </div>
 
   )

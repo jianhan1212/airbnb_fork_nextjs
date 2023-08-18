@@ -36,8 +36,8 @@
     top: 3%;
     z-index: 20;
     font-size: 36px;
-    background: rgba(221, 221, 221, .3);
-    opacity: 1;
+    background: rgba(221, 221, 221, .2);
+    opacity: .8;
     border: none;
     border-radius: 50%;
 }

@@ -7,11 +7,26 @@ import { AiFillStar, AiOutlineHeart } from 'react-icons/ai'
 import SimpleImageSlider from "react-simple-image-slider";
 import BasicModal from '../Modal/BasicModal'
 import { useDisclosure } from '@nextui-org/modal'
+import { useState } from 'react'
+import Checkbox from '@mui/material/Checkbox';
+import {FcLike} from 'react-icons/fc'
+import {TiHeartOutline} from 'react-icons/ti'
 
+const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
 const Local = ({ test }) => {
 
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // 登入狀態
+  const [isChecked, setIsChecked] = useState(false); // Checkbox 狀態
+  const handleCheckboxChange = () => {
+    setIsChecked(!isChecked);
+  };
+
+  const handleLogin = () => {
+    onOpen()
+    setIsLoggedIn(true);
+  };
 
   const info = (city) => {
     if (city) {
@@ -23,19 +38,33 @@ const Local = ({ test }) => {
   return (
     <>
       <div className={styles.container} onClick={() => { info(test.city) }}>
-        <AiOutlineHeart className={styles.like} onClick={()=>onOpen()} />
-          <div className={styles.imgContainer}>
-            <SimpleImageSlider 
-              images={test.image}
-              loop={false}
-              showNavs={true}
-              width={"100%"}
-              height={300}
-              navStyle={2}
-              navMargin={10}
-              showBullets={true}
-            />
+        {/* <AiOutlineHeart className={styles.like} onClick={()=>onOpen()} /> */}
+        {isLoggedIn ? (
+          <Checkbox
+            {...label}
+            icon={<TiHeartOutline size={28}/>}
+            checkedIcon={<FcLike size={28}/>}
+            checked={isChecked}
+            onChange={handleCheckboxChange}
+            className={styles.like}
+          />
+        ) : (
+          <div>
+            <Checkbox icon={<TiHeartOutline size={28} />} onClick={handleLogin} className={styles.like} />
           </div>
+        )}
+        <div className={styles.imgContainer}>
+          <SimpleImageSlider
+            images={test.image}
+            loop={false}
+            showNavs={true}
+            width={"100%"}
+            height={300}
+            navStyle={2}
+            navMargin={10}
+            showBullets={true}
+          />
+        </div>
         <Link href="/about" target='_blank'>
           <div className={styles.textContainer}>
             <div className={styles.title}>
@@ -50,9 +79,9 @@ const Local = ({ test }) => {
           </div>
         </Link>
       </div>
-      <BasicModal isOpen={isOpen} onOpenChange={onOpenChange}/>
+      <BasicModal isOpen={isOpen} onOpenChange={onOpenChange} />
     </>
-    
+
   )
 }
 
