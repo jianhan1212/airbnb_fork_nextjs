@@ -42,7 +42,7 @@ const Local = ({ test }) => {
         <div className={styles.imgContainer}>
           {isLoggedIn ? (
             <Checkbox
-              {...label}
+              // {...label}
               icon={<TiHeartOutline size={28}/>}
               checkedIcon={<FcLike size={28}/>}
               checked={isChecked}
