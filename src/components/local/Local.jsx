@@ -58,11 +58,20 @@ const Local = ({ test }) => {
               checkedIcon={<FcLike size={28}/>}
               checked={isChecked}
               onChange={handleCheckboxChange}
-              className={styles.like}
+              // className={styles.like}
+              sx={{
+                position: 'absolute',
+                top: "3%",
+                right: "3%"
+              }}
             />
           ) : (
             <>
-              <Checkbox className={styles.like} icon={<TiHeartOutline size={28} />} onClick={handleLogin} />
+              <Checkbox  sx={{
+                position: 'absolute',
+                top: "3%",
+                right: "3%"
+              }} icon={<TiHeartOutline size={28} />} onClick={handleLogin} />
             </>
           )}
         </div>
