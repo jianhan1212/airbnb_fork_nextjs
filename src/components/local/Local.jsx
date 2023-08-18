@@ -51,7 +51,7 @@ const Local = ({ test }) => {
             />
           ) : (
             <>
-              <Checkbox icon={<TiHeartOutline size={28} />} onClick={handleLogin} className={styles.like} />
+              <Checkbox icon={<TiHeartOutline size={28} className={styles.like}/>} onClick={handleLogin} className={styles.like} />
             </>
           )}
           <SimpleImageSlider
