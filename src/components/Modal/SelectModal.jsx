@@ -1,9 +1,11 @@
 import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, Input, Divider, useDisclosure } from "@nextui-org/react";
 import { IoMdSwitch } from 'react-icons/io'
+import Shuffle from 'public/shuffle.svg'
 import styles from './modal.module.css'
 import { CheckboxGroup, Checkbox } from "@nextui-org/react";
 import { useState } from "react";
 import { CustomCheckbox } from "../customCheckbox/CustomCheckbox";
+import Image from "next/image";
 
 export default function SelectModal() {
     const { isOpen, onOpen, onOpenChange } = useDisclosure();
@@ -17,8 +19,8 @@ export default function SelectModal() {
     return (
         <>
             <Button
-                className='bg-transparent border-solid border-2 px-1 ml-2'
-                startContent={<IoMdSwitch />}
+                className='bg-transparent border-solid border-2 ml-2 gap-0'
+                startContent={<Image src={Shuffle} className="pl-1"/>}
                 onClick={() => onOpen()}
             >
                 篩選條件
