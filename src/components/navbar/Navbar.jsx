@@ -10,6 +10,7 @@ import { ContextMenuDivider, ContextMenuItem, useContextMenu } from 'use-context
 import LoginBtn from './LoginBtn'
 import BasicModal from '../Modal/BasicModal';
 import { useDisclosure } from '@nextui-org/modal';
+import { Divider } from '@mui/material';
 
 const Navbar = () => {
     const { isOpen, onOpen, onOpenChange } = useDisclosure();
@@ -52,11 +53,12 @@ const Navbar = () => {
                                 <button className={styles.button}>
                                     <div className={styles.label}>任何地方</div>
                                 </button>
-                                <span className={styles.line}></span>
+                                {/* <span className={styles.line}></span> */}
+                                <Divider orientation="vertical" variant="middle" flexItem />
                                 <button className={styles.button}>
                                     <div className={styles.label}>任 1 週</div>
                                 </button>
-                                <span className={styles.line}></span>
+                                <Divider orientation="vertical" variant="middle" flexItem />
                                 <button className={styles.button}>
                                     <div className={styles.label} style={{ color: "#717171", fontWeight: "inherit" }}>新增人數</div>
                                     <div className={styles.search}>
