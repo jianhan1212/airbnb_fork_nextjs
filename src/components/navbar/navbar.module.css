@@ -167,7 +167,7 @@
 .menu {
     border: 1px solid #dddddd;
     border-radius: 21px;
-    margin: 0;
+    /* margin: 0; */
     transition: all .2s ease;
 }
 
@@ -209,6 +209,21 @@
     align-items: center;
     width: 90%;
     /* transform: translateX(0px); */
-    transition: all 1s ease;
+    transition: all .5s ease;
     padding: 0 30px;
+}
+
+@media screen and (max-width: 968px) {
+    .logo {
+        font-size: 26px;
+        flex: 0;
+    }
+    
+    .btnContainer {
+        flex: 0 1 auto;
+    }
+    
+    .right {
+        flex: 2;
+    }
 }
