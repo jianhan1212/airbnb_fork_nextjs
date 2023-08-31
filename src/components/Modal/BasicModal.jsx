@@ -1,11 +1,12 @@
 "use client"
-import { Modal, ModalContent, ModalHeader, ModalBody, Button, Input, Divider } from "@nextui-org/react";
+import { Modal, ModalContent, ModalHeader, ModalBody, Button, Input} from "@nextui-org/react";
 import { FcGoogle } from "react-icons/fc"
 import { FaSquareFacebook } from "react-icons/fa6"
 import { FaApple } from "react-icons/fa"
 import { CiMail } from 'react-icons/ci'
 import SelectCountry from "../selectCountry/selectCountry";
 import React, { useState } from "react";
+import { Divider } from "@mui/material";
 
 
 export default function BasicModal(props) {
@@ -77,7 +78,7 @@ export default function BasicModal(props) {
                                 <Button color="danger" variant="solid" onClick={onClose} className="color-white">
                                     繼續
                                 </Button>
-                                <Divider className="my-2" />
+                                <Divider>或</Divider>
                                 <Button className="bg-transparent border-solid border-2" onPress={onClose} startContent={<FaSquareFacebook className="text-xl" />} >
                                     繼續使用Facebook登入
                                 </Button>

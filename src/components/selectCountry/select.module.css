@@ -4,6 +4,7 @@
     align-items: flex-start;
     height: 56px;
     padding: 0 10px;
+    gap: 0;
 }
 
 .local {
@@ -15,4 +16,5 @@
 .country {
     padding-bottom: 15px;
     margin: 0;
+    
 }

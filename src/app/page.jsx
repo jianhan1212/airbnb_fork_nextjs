@@ -26,6 +26,7 @@ export default function Home() {
 
   return (
     <>
+   
       <Navbar />
       <div className='flex justify-center'>
         <ShowTotal 
